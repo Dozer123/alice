@@ -1,7 +1,5 @@
 const { Alice, Scene, Stage, Reply, Markup } = require('yandex-dialogs-sdk')
 
- 
-
 const alice = new Alice()
 
 const stage = new Stage();
