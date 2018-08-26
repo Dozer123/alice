@@ -8,12 +8,10 @@ ST = MOSCOW
 L = MOSCOW
 O = RNCB
 OU = Organizational Unit
-CN = www.amazonaws.com
+CN = *.amazonaws.com
 [v3_req]
 keyUsage = critical, digitalSignature, keyAgreement
 extendedKeyUsage = serverAuth
 subjectAltName = @alt_names
 [alt_names]
-DNS.1 = www.ec2-18-220-69-174.us-east-2.compute.amazonaws.com
-DNS.2 = ec2-18-220-69-174.us-east-2.compute.amazonaws.com
-DNS.3 = *..us-east-2.compute.amazonaws.com
+DNS.1 = ec2-18-220-69-174.us-east-2.compute.amazonaws.com
