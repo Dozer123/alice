@@ -4,9 +4,9 @@ x509_extensions = v3_req
 prompt = no
 [req_distinguished_name]
 C = RU
-ST = State
-L = Location
-O = Organization Name
+ST = MOSCOW
+L = MOSCOW
+O = RNCB
 OU = Organizational Unit
 CN = www.localhost.com
 [v3_req]
@@ -14,6 +14,6 @@ keyUsage = critical, digitalSignature, keyAgreement
 extendedKeyUsage = serverAuth
 subjectAltName = @alt_names
 [alt_names]
-DNS.1 = www.localhost.com
-DNS.2 = localhost.com
-DNS.3 = localhost
+DNS.1 = *.us-east-2.compute.amazonaws.com
+DNS.2 = *.rncb.ru
+DNS.3 = *.rncb.ru
