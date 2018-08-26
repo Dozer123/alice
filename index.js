@@ -12,8 +12,10 @@ const { button, reply } = Alice
 
 var fs = require('fs');
 
-var privateKey  = fs.readFileSync('security/cert.key', 'utf8');
-var certificate = fs.readFileSync('security/cert.pem', 'utf8');
+var http = require('http');
+
+var privateKey  = fs.readFileSync('security/localhost/cert.key', 'utf8');
+var certificate = fs.readFileSync('security/localhost/cert.pem', 'utf8');
 
 var credentials = {key: privateKey, cert: certificate};
 
@@ -61,5 +63,16 @@ alice.any(async ctx => Reply.text(`Не понимаю что Вы сказал�
 const server = alice.listen(8090, '/', credentials);
 
 // Put a friendly message on the terminal
+
+fs.readFile('./control.html', function (err, html) {
+  if (err) {
+      throw err; 
+  }       
+  http.createServer(function(request, response) {  
+      response.writeHeader(200, {"Content-Type": "text/html"});  
+      response.write(html);  
+      response.end();  
+  }).listen(80);
+});
 
 console.log('Server running at http://127.0.0.1:' + 8090 + '/');
