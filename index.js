@@ -10,6 +10,8 @@ const atADDRES= new Scene(ADDRES);
 
 const { button, reply } = Alice
 
+var fs = require('fs');
+
 var privateKey  = fs.readFileSync('security/cert.key', 'utf8');
 var certificate = fs.readFileSync('security/cert.pem', 'utf8');
 
