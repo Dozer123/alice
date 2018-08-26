@@ -10,16 +10,6 @@ const atADDRES= new Scene(ADDRES);
 
 const { button, reply } = Alice
 
-var fs = require('fs');
-var http = require('http');
-var https = require('https');
-
-var privateKey = fs.readFileSync('security/cert.key', 'utf8');
-var certificate = fs.readFileSync('security/cert.pem', 'utf8');
-
-var credentials = {key: privateKey, cert: certificate};
-
-
 /*alice.command(async (ctx) => {
 
                 const replyMsg = reply({
@@ -72,7 +62,7 @@ alice.command('Адреса режимы работы ОО', ctx => {
 
 alice.any(async ctx => Reply.text(`I don't understand`));
 
-const server = alice.listen(8090, '/', credentials);
+const server = alice.listen(8090, '/');
 
 // Put a friendly message on the terminal
 
