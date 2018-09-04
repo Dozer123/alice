@@ -60,7 +60,9 @@ alice.command('Адреса режимы работы ОО', ctx => {
 
 alice.any(async ctx => Reply.text(`Не понимаю что Вы сказали`));
 
-const server = alice.listen(8090, '/', credentials);
+const server = alice.listen(8090, '/'
+//, credentials
+);
 
 // Put a friendly message on the terminal
 
